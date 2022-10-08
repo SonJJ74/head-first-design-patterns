@@ -6,6 +6,5 @@ Console.WriteLine("Hello, Observer Pattern!");
 
 var weatherData = new WeatherData();
 
-var statisticsDisplay = new StatisticsDisplay(weatherData);
-var forecastDisplay = new StatisticsDisplay(weatherData);
-var thirdPartyDisplay = new StatisticsDisplay(weatherData);
+var forecastDisplay = new ForecastDisplay(weatherData);
+var thirdPartyDisplay = new ThirdPartyDisplay(weatherData);
