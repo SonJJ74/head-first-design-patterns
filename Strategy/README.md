@@ -70,3 +70,4 @@ class Squeak {
 class MuteQuack {
   Quack()
 }
+```
