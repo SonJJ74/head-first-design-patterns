@@ -5,24 +5,44 @@ namespace Observer.WeatherStation.Subjects
 {
     public class WeatherData : ISubject
     {
-        public List<IObserver> Observers { get; set; } = new();
+        private readonly List<IObserver> _observers = new();
+        private double _temperature;
+        private double _humidity;
+        public double _pressure;
 
         public void RegisterObserver(IObserver observer)
         {
-            Observers.Add(observer);
+            _observers.Add(observer);
         }
 
         public void RemoveObserver(IObserver observer)
         {
-            Observers.Remove(observer);
+            _observers.Remove(observer);
         }
 
         public void NotifyObservers()
         {
-            foreach(var observer in Observers)
-            {
-                observer.Update();
-            }
+            _observers.ForEach(o => o.Update(
+                _temperature,
+                _humidity,
+                _pressure));
+        }
+
+        private void MeasurementsChanged()
+        {
+            NotifyObservers();
+        }
+
+        public void SetMeasurements(
+            double temperature,
+            double humidity,
+            double pressure)
+        {
+            _temperature = temperature;
+            _humidity = humidity;
+            _pressure = pressure;
+
+            MeasurementsChanged();
         }
     }
 }
