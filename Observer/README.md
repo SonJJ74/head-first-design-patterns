@@ -15,7 +15,7 @@ classDiagram
     Observer <|.. CurrentConditionsDisplay
     Observer <|.. StatisticsDisplay
     Observer <|.. ThirdPartyDisplay
-    Observer <|.. ForeCastDisplay
+    Observer <|.. ForecastDisplay
     DisplayElement <|.. CurrentConditionsDisplay
 class Subject {
   <<interface>>
@@ -53,7 +53,7 @@ class ThirdPartyDisplay {
   Update()
   Display()
 }
-class ForeCastDisplay {
+class ForecastDisplay {
   Update()
   Display()
 }
