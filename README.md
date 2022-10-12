@@ -10,6 +10,7 @@
 - Favour composition over inheritances.
 - Program to an interfaces, not implementations
 - Strive for loosely coupled designs between objects that interact.
+- Classes should be open for extension, but closed for modification.
 
 <br/>
 
@@ -22,3 +23,7 @@ Strategy lets the algorithm vary independently from clients that use it.
 ## Obverver Pattern
 The observer pattern defines a one-to-many dependency between objects so taht when one object change state,
 all its dependents are notified and updated.
+
+## Decorator Pattern
+The decorator pattern attaches additional responsibilities to an object dynamically.
+Decorators provide a flexible alternative to subclassing for extending functionality.
