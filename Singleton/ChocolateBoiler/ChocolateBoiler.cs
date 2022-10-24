@@ -10,16 +10,19 @@
             HasBoiled = false;
         }
 
+        public static ChocolateBoiler UniqueInstance
+        {
+            get
+            {
+                _uniqueInstance ??= new ChocolateBoiler();
+
+                return _uniqueInstance;
+            }
+        }
+
         public bool IsEmpty { get; private set; }
 
         public bool HasBoiled { get; private set; }
-
-        public static ChocolateBoiler GetInstance()
-        {
-            _uniqueInstance ??= new ChocolateBoiler();
-
-            return _uniqueInstance;
-        }
 
         public void Fill()
         {

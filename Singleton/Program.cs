@@ -3,13 +3,13 @@ using Singleton.ChocolateBoiler;
 
 Console.WriteLine("Hello, Singleton Pattern!");
 
-var boiler = ChocolateBoiler.GetInstance();
+var boiler = ChocolateBoiler.UniqueInstance;
 
 boiler.Fill();
 boiler.Boil();
 boiler.Drain();
 
 //This boiler should be the first boiler
-var secondBoiler = ChocolateBoiler.GetInstance();
+var secondBoiler = ChocolateBoiler.UniqueInstance;
 var isEmpty = boiler.IsEmpty;
 var hasBoiled = boiler.HasBoiled;
